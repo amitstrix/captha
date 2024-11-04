@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Form with CAPTCHA</title>
+    <style>
+        .form-container {
+            margin: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .captcha {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        #message {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Form with CAPTCHA</h2>
+        <form id="form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="captcha-container">
+                <div class="captcha" id="captcha"></div>
+                <button type="button" id="refresh-captcha"><i class="fa-solid fa-arrows-rotate"></i></button>
+                <input type="text" id="captcha-input" placeholder="Enter CAPTCHA" required>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="not-robot" required> I am not a robot
+                </label>
+            </div>
+            <button type="button" id="submit-btn">Submit</button>
+            <p id="message"></p>
+        </form>
+        <div id="form-data" style="display:none;">
+            <h3>Submitted Data:</h3>
+            <p><strong>Name:</strong> <span id="display-name"></span></p>
+            <p><strong>Email:</strong> <span id="display-email"></span></p>
+            <p><strong>Phone:</strong> <span id="display-phone"></span></p>
+        </div>
+    </div>
+
+    <script src="captcha.js"></script>
+</body>
+</html>
